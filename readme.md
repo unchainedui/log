@@ -2,15 +2,19 @@
 
 ## Log
 
+[![NPM Version](https://img.shields.io/npm/v/uc-log.svg?style=flat-square)](https://www.npmjs.com/package/uc-log)
+[![NPM Downloads](https://img.shields.io/npm/dt/uc-log.svg?style=flat-square)](https://www.npmjs.com/package/uc-log)
+
 Log mixin with levels of verbosity
 
 ### Usage
 
 ```js
+import compose from 'uc-compose'
 import { log, LOG_LEVEL } from 'uc-log'
 
 const MyClass = function() {}
-MyClass.prototype = Object.assign({},
+MyClass.prototype = compose(
   log,
   {
     logLevel: LOG_LEVEL.DEBUG,
@@ -20,7 +24,6 @@ MyClass.prototype = Object.assign({},
     }
   }
 )
-
 ```
 
 ### Methods
